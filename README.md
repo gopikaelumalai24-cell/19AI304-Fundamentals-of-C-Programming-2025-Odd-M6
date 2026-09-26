@@ -33,7 +33,15 @@ To develop a C program using the static storage class in a function with a param
 ### Step 8:
   Stop
 # Program:
+for(i = 0; i < 5; i++)
+{
+    printf("%.2f  ", value);
+    value += step[i]; 
+}
+printf("\n");
 # Output:
+<img width="442" height="267" alt="image" src="https://github.com/user-attachments/assets/819cf17d-df40-4582-8b7b-8af57443675b" />
+
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
 
@@ -79,7 +87,39 @@ Thus, the program was implemented and executed successfully, and the required ou
 ### Step 11:
   Stop
 # Program:
+printf("Enter two integers: ");
+scanf("%d %d", &num1, &num2);
+
+printf("\nSelect an operation:\n");
+printf("1. Addition\n");
+printf("2. Subtraction\n");
+printf("3. Multiplication\n");
+printf("4. Division\n");
+printf("Enter your choice (1-4): ");
+scanf("%d", &choice);
+switch(choice)
+{
+    case 1: operation = add; break;
+    case 2: operation = subtract; break;
+    case 3: operation = multiply; break;
+    case 4: 
+        if(num2 == 0)
+        {
+            printf("Error: Division by zero is not allowed.\n");
+            return 0;
+        }
+        operation = divide; 
+        break;
+    default:
+        printf("Invalid choice.\n");
+        return 0;
+}
+printf("Result = %d\n", operation(num1, num2));
+
+return 0;
 # Output:
+<img width="421" height="442" alt="image" src="https://github.com/user-attachments/assets/bc78b7be-feb0-4213-9d96-218552163dea" />
+
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
 
@@ -123,7 +163,37 @@ Thus, the program was implemented and executed successfully, and the required ou
 ### Step 10:
   Stop
 # Program:
+printf("Enter the number of employees: ");
+scanf("%d", &n);
+
+struct Employee emp[n];
+for(i = 0; i < n; i++)
+{
+    printf("\nEnter details for employee %d:\n", i + 1);
+    printf("Employee Number: ");
+    scanf("%d", &emp[i].empNo);
+    printf("Name: ");
+    scanf(" %[^\n]", emp[i].name); 
+    printf("Salary: ");
+    scanf("%f", &emp[i].salary);
+
+    if(emp[i].salary > maxSalary)
+        maxSalary = emp[i].salary; 
+}
+printf("\nEmployee(s) with the highest salary (%.2f):\n", maxSalary);
+for(i = 0; i < n; i++)
+{
+    if(emp[i].salary == maxSalary)
+    {
+        printf("Employee Number: %d, Name: %s, Salary: %.2f\n",
+               emp[i].empNo, emp[i].name, emp[i].salary);
+    }
+}
+
+return 0;
 # Output:
+<img width="620" height="637" alt="image" src="https://github.com/user-attachments/assets/55d30b61-9e9b-4565-a351-eb3aa2f42fd8" />
+
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
 
@@ -202,7 +272,14 @@ Thus, the program was implemented and executed successfully, and the required ou
 ### Step 10:
   Stop
 # Program:
+ptr = &data;
+printf("Value as integer: %d\n", ptr->i);
+printf("Value as character: %c\n", ptr->c);
+
+return 0;
 # Output:
+<img width="471" height="397" alt="image" src="https://github.com/user-attachments/assets/20b59035-af9d-4a5f-a506-0f4498c5f472" />
+
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
 
